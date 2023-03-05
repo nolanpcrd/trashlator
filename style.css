@@ -1,0 +1,140 @@
+body{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+textarea {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    display: flex;
+    margin-left: 10%;
+    width: 500px;
+    height: 250px;
+    resize: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex textarea {
+    margin-top: -12%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius:50px;
+}
+
+.light .flex textarea {
+    color: white;
+    background: #596643;
+    border: 10px solid #04045b;
+}
+
+.dark .flex textarea {
+    color: black;
+    background: deeppink;
+    border: 10px solid #04045b;
+}
+
+a {
+    text-align: end;
+    font-size: 1.8rem;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 170px;
+}
+
+.header-button {
+    display: flex;
+    width: 150px;
+    margin-left: 80%;
+}
+
+img {
+    display: flex;
+    height: 200px;
+    width: 100%;
+}
+
+img:hover, #info:hover, #theme:hover {
+    animation: shake 0.01s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0) rotate(0); }
+    10% { transform: translate(-10px, 0) rotate(-5deg); }
+    20% { transform: translate(10px, 0) rotate(5deg); }
+    30% { transform: translate(-10px, 0) rotate(-5deg); }
+    40% { transform: translate(10px, 0) rotate(5deg); }
+    50% { transform: translate(-10px, 0) rotate(-5deg); }
+    60% { transform: translate(10px, 0) rotate(5deg); }
+    70% { transform: translate(-10px, 0) rotate(-5deg); }
+    80% { transform: translate(10px, 0) rotate(5deg); }
+    90% { transform: translate(-10px, 0) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0); }
+}
+
+#info {
+    display: flex;
+    font-size: 2rem;
+    background: orangered;
+    height: 100px;
+    width: 50%;
+}
+
+#theme {
+    display: flex;
+    font-size: 2rem;
+    background: indianred;
+    height: 100px;
+    width: 50%;
+    margin-top: -100px;
+    margin-left: 50%;
+}
+
+.light {
+    background: deeppink;
+    color: white;
+}
+
+.dark {
+    background: #596643;
+    color: black;
+}
+
+.light #info, .light #theme, .light .area {
+    color: white;
+}
+
+.dark #info, .dark #theme {
+    color: black;
+}
+
+.light a{
+    background: #596643;
+    color: white;
+}
+
+.dark a{
+    background: deeppink;
+    color: black;
+}
+
+
+/* 1920x1080 */
+
+@media screen and (max-width: 1920px) and (min-width: 1920px) {
+    textarea {
+        width: 750px;
+        height: 500px;
+    }
+
+    a {
+        margin-left: 350px;
+    }
+
+    .header-button {
+        margin-left: 1650px;
+    }
+}

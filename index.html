@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+	<head>
+		<title>Trashlator</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<script src="translate.js"></script>
+		<script src="en.js"></script>
+		<script src="fr.js"></script>
+	
+		<script>
+			function init() {
+				initTranslate(words_en, words_fr);
+			}
+		</script>
+	</head>
+	<body onload="javascript:init()">
+		<div class="main">
+			<div class="header">
+				<img src="favicon.ico">
+				<p id="info"></p>
+				<p id="theme"></p>
+				<a href="javascript:switchTheme()" class="header-button">Switch</a>
+			</div>
+			<div class="flex">
+				<div class="area">
+					<textarea type="text" cols=40 rows=10 id="src"></textarea>
+				</div>
+				<div class="area">
+					<textarea type="text" cols=40 rows=10 id="dst"></textarea>
+				</div>
+			</div>
+			<div class="flex">
+				<a href="javascript:translate()" class="button">Translate</a>
+				<a href="javascript:switchLang()" class="button">Switch languages</a>
+			</div>
+		</div>
+	</body>
+</DOCTYPEhtml>

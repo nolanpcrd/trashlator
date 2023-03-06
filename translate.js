@@ -48,14 +48,33 @@ function translate() {
 		a = words_en;
 		b = words_fr;
 	}
-	let words = src.value.split(" ");
+
+	let current = "";
+	let type = ""; // type of previous character; 0: text, 1: symbols
+	let currenttype, char;
 	dst.value = "";
-	for (let i = 0; i < words.length; i++) {
-		let match = bestMatch(words[i], a);
-		dst.value += b[a.indexOf(match)];
-		if (i < words.length-1) {
-			dst.value += " ";
+	for (let i = 0; i <= src.value.length; i++) {
+		if (i == src.value.length) { // don't forget the last word
+			currenttype = -1;
+		} else {
+			char = src.value[i].toLowerCase();
+			if (/^[a-zA-Z]+$/.test(char)) {
+				currenttype = 0;
+			} else {
+				currenttype = 1;
+			}
 		}
+		if (type == currenttype) {
+			current += char;
+		} else {
+			if (type == 0) {
+				dst.value += b[a.indexOf(bestMatch(current, a))];
+			} else {
+				dst.value += current;
+			}
+			current = char;
+		}
+		type = currenttype;
 	}
 }
 

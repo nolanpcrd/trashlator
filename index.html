@@ -1,8 +1,7 @@
-<!DOCTYPE html>
+<html>
 	<head>
 		<title>Trashlator</title>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="style.css">
 		<script src="translate.js"></script>
 		<script src="en.js"></script>
@@ -11,6 +10,7 @@
 		<script>
 			function init() {
 				initTranslate(words_en, words_fr);
+				translate();
 			}
 		</script>
 	</head>
@@ -24,7 +24,7 @@
 			</div>
 			<div class="flex">
 				<div class="area">
-					<textarea type="text" cols=40 rows=10 id="src"></textarea>
+					<textarea type="text" cols=40 rows=10 id="src">Ceci est le meilleur traducteur au monde.</textarea>
 				</div>
 				<div class="area">
 					<textarea type="text" cols=40 rows=10 id="dst"></textarea>
@@ -36,4 +36,4 @@
 			</div>
 		</div>
 	</body>
-</DOCTYPEhtml>
+</html>

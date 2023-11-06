@@ -27,15 +27,9 @@ function difference(a, b) {
 	return diff;
 }
 
-function replace(str, prev, new_) {
-	for (let i = 0; i < prev.length; i++) {
-		str = str.replace(prev[i], new_[i]);
-	}
-	return str;
-}
-
 function translate() {
-	if (src.value.length == 0) {
+	let text = src.value.toLowerCase().replaceAll("à", "a").replaceAll("é", "e").replaceAll("è", "e").replaceAll("ê", "e").replaceAll("ô", "o").replaceAll("ù", "u").replaceAll("î", "i").replaceAll("ï", "i").replaceAll("'", "").replaceAll("’", "");
+	if (text.length == 0) {
 		dst.value = "";
 		return;
 	}
@@ -53,11 +47,11 @@ function translate() {
 	let type = ""; // type of previous character; 0: text, 1: symbols
 	let currenttype, char;
 	dst.value = "";
-	for (let i = 0; i <= src.value.length; i++) {
-		if (i == src.value.length) { // don't forget the last word
+	for (let i = 0; i <= text.length; i++) {
+		if (i == text.length) { // don't forget the last word
 			currenttype = -1;
 		} else {
-			char = src.value[i].toLowerCase();
+			char = text[i].toLowerCase();
 			if (/^[a-zA-Z]+$/.test(char)) {
 				currenttype = 0;
 			} else {
@@ -141,7 +135,6 @@ function openCookies() {
 		let current = allCookies[i].split("=");
 		if (current[0].length) {
 			cookies[current[0]] = current[1];
-			console.log(current);
 		}
 	}
 }
